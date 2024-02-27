@@ -68,7 +68,7 @@ pipeline {
         }
         stage('Publish Robot Results') {
             steps {
-                robot archiveDirName: 'robot-plugin', outputPath: '**/results/robot/', overwriteXAxisLabel: '', passThreshold: 95.0, unstableThreshold: 100.0
+                robot archiveDirName: 'robot-plugin', outputPath: 'results/robot/', overwriteXAxisLabel: '', passThreshold: 95.0, unstableThreshold: 100.0
             }
         }
 
