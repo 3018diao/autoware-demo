@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulation Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h2>Simulation Report</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Sub Category</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+                <td>HealthCheck</td>
+                <td>-</td>
+                <td>Simulator health check fails</td>
+            </tr>
+            
+            <tr>
+                <td>ROSProcessCheck</td>
+                <td>-</td>
+                <td>Executed ROS process terminated abnormally</td>
+            </tr>
+            
+            <tr>
+                <td>SimulationFailure</td>
+                <td>-</td>
+                <td>Simulation results fail</td>
+            </tr>
+            
+            <tr>
+                <td>SimulationError1</td>
+                <td>AutowareError</td>
+                <td>Error in message exchange between simulator and Autoware</td>
+            </tr>
+            
+            <tr>
+                <td>InternalError</td>
+                <td>SimulationError:InternalError</td>
+                <td>Unexpected simulator error</td>
+            </tr>
+            
+            <tr>
+                <td>SemanticError</td>
+                <td>SimulationError:SemanticError</td>
+                <td>Semantic anomaly in a scenario</td>
+            </tr>
+            
+            <tr>
+                <td>SimulationError</td>
+                <td>SimulationError:SimulationError</td>
+                <td>Errors inside the simulator</td>
+            </tr>
+            
+            <tr>
+                <td>SyntaxError</td>
+                <td>SimulationError:SyntaxError</td>
+                <td>Syntax errors in scenarios</td>
+            </tr>
+            
+            <tr>
+                <td>SpecificationViolation</td>
+                <td>SimulationError:SpecificationViolation</td>
+                <td>Specification violations during simulation execution</td>
+            </tr>
+            
+            <tr>
+                <td>EntityConditionFailure</td>
+                <td>ReachPositionCondition</td>
+                <td>ReachPositionCondition failed</td>
+            </tr>
+            
+            <tr>
+                <td>RelativeDistanceCondition</td>
+                <td>ConditionFailure:RelativeDistanceCondition</td>
+                <td>RelativeDistanceCondition failed</td>
+            </tr>
+            
+            <tr>
+                <td>SpeedCondition</td>
+                <td>ConditionFailure:SpeedCondition</td>
+                <td>SpeedCondition failed</td>
+            </tr>
+            
+            <tr>
+                <td>AccelerationCondition</td>
+                <td>ConditionFailure:AccelerationCondition</td>
+                <td>AccelerationCondition failed</td>
+            </tr>
+            
+            <tr>
+                <td>CollisionCondition</td>
+                <td>ConditionFailure:CollisionCondition</td>
+                <td>CollisionCondition failed</td>
+            </tr>
+            
+            <tr>
+                <td>EndOfRoadCondition</td>
+                <td>ConditionFailure:EndOfRoadCondition</td>
+                <td>EndOfRoadCondition failed</td>
+            </tr>
+            
+            <tr>
+                <td>OffroadCondition</td>
+                <td>ConditionFailure:OffroadCondition</td>
+                <td>OffroadCondition failed</td>
+            </tr>
+            
+            <tr>
+                <td>TimeHeadwayCondition</td>
+                <td>ConditionFailure:TimeHeadwayCondition</td>
+                <td>TimeHeadwayCondition failed</td>
+            </tr>
+            
+            <tr>
+                <td>StandStillCondition</td>
+                <td>ConditionFailure:StandStillCondition</td>
+                <td>StandStillCondition failed</td>
+            </tr>
+            
+            <tr>
+                <td>DistanceCondition</td>
+                <td>ConditionFailure:DistanceCondition</td>
+                <td>DistanceCondition failed</td>
+            </tr>
+            
+            <tr>
+                <td>ByValueConditionFailure</td>
+                <td>SimulationTimeCondition</td>
+                <td>SimulationTimeCondition failed</td>
+            </tr>
+            
+            <tr>
+                <td>TrafficSignalCondition</td>
+                <td>ConditionFailure:TrafficSignalCondition</td>
+                <td>TrafficSignalCondition failed</td>
+            </tr>
+            
+            <tr>
+                <td>TrafficSignalControllerCondition</td>
+                <td>ConditionFailure:TrafficSignalControllerCondition</td>
+                <td>TrafficSignalControllerCondition failed</td>
+            </tr>
+            
+            <tr>
+                <td>StoryboardElementStateCondition</td>
+                <td>ConditionFailure:StoryboardElementStateCondition:<name></td>
+                <td>StoryboardElementStateCondition failed. <name> displays reference information for the target condition.</td>
+            </tr>
+            
+            <tr>
+                <td>UserDefinedValueCondition</td>
+                <td>ConditionFailure:UserDefinedValueCondition:<name></td>
+                <td>UserDefinedValueCondition failed.<name> displays reference information for the target condition.</td>
+            </tr>
+            
+        </tbody>
+    </table>
+</body>
+</html>

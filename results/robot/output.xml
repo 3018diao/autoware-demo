@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuite name="Simulation Testing" tests="24" failures="24" errors="0" skipped="0" timestamp="2024-02-27T00:00:00">
+  <testcase classname="HealthCheck.-" name="SimulatorHealthCheckFailure">
+    <failure type="failure">Simulator health check fails</failure>
+  </testcase>
+  <testcase classname="ROSProcessCheck.-" name="ROSProcessDied">
+    <failure type="failure">Executed ROS process terminated abnormally</failure>
+  </testcase>
+  <testcase classname="SimulationFailure.-" name="SimulationFailure">
+    <failure type="failure">Simulation results fail</failure>
+  </testcase>
+  <testcase classname="SimulationError.AutowareError" name="SimulationError:AutowareError">
+    <failure type="failure">Error in message exchange between simulator and Autoware</failure>
+  </testcase>
+  <testcase classname="InternalError.SimulationError:InternalError" name="Unexpected simulator error">
+    <failure type="failure">Unexpected simulator error</failure>
+  </testcase>
+  <testcase classname="SemanticError.SimulationError:SemanticError" name="Semantic anomaly in a scenario">
+    <failure type="failure">Semantic anomaly in a scenario</failure>
+  </testcase>
+  <testcase classname="SimulationError.SimulationError:SimulationError" name="Errors inside the simulator">
+    <failure type="failure">Errors inside the simulator</failure>
+  </testcase>
+  <testcase classname="SyntaxError.SimulationError:SyntaxError" name="Syntax errors in scenarios">
+    <failure type="failure">Syntax errors in scenarios</failure>
+  </testcase>
+  <testcase classname="SpecificationViolation.SimulationError:SpecificationViolation" name="Specification violations during simulation execution">
+    <failure type="failure">Specification violations during simulation execution</failure>
+  </testcase>
+  <testcase classname="EntityConditionFailure.ReachPositionCondition" name="ConditionFailure:ReachPositionCondition">
+    <failure type="failure">ReachPositionCondition failed</failure>
+  </testcase>
+  <testcase classname="RelativeDistanceCondition.ConditionFailure:RelativeDistanceCondition" name="RelativeDistanceCondition failed">
+    <failure type="failure">RelativeDistanceCondition failed</failure>
+  </testcase>
+  <testcase classname="SpeedCondition.ConditionFailure:SpeedCondition" name="SpeedCondition failed">
+    <failure type="failure">SpeedCondition failed</failure>
+  </testcase>
+  <testcase classname="AccelerationCondition.ConditionFailure:AccelerationCondition" name="AccelerationCondition failed">
+    <failure type="failure">AccelerationCondition failed</failure>
+  </testcase>
+  <testcase classname="CollisionCondition.ConditionFailure:CollisionCondition" name="CollisionCondition failed">
+    <failure type="failure">CollisionCondition failed</failure>
+  </testcase>
+  <testcase classname="EndOfRoadCondition.ConditionFailure:EndOfRoadCondition" name="EndOfRoadCondition failed">
+    <failure type="failure">EndOfRoadCondition failed</failure>
+  </testcase>
+  <testcase classname="OffroadCondition.ConditionFailure:OffroadCondition" name="OffroadCondition failed">
+    <failure type="failure">OffroadCondition failed</failure>
+  </testcase>
+  <testcase classname="TimeHeadwayCondition.ConditionFailure:TimeHeadwayCondition" name="TimeHeadwayCondition failed">
+    <failure type="failure">TimeHeadwayCondition failed</failure>
+  </testcase>
+  <testcase classname="StandStillCondition.ConditionFailure:StandStillCondition" name="StandStillCondition failed">
+    <failure type="failure">StandStillCondition failed</failure>
+  </testcase>
+  <testcase classname="DistanceCondition.ConditionFailure:DistanceCondition" name="DistanceCondition failed">
+    <failure type="failure">DistanceCondition failed</failure>
+  </testcase>
+  <testcase classname="ByValueConditionFailure.SimulationTimeCondition" name="ConditionFailure:SimulationTimeCondition">
+    <failure type="failure">SimulationTimeCondition failed</failure>
+  </testcase>
+  <testcase classname="TrafficSignalCondition.ConditionFailure:TrafficSignalCondition" name="TrafficSignalCondition failed">
+    <failure type="failure">TrafficSignalCondition failed</failure>
+  </testcase>
+  <testcase classname="TrafficSignalControllerCondition.ConditionFailure:TrafficSignalControllerCondition" name="TrafficSignalControllerCondition failed">
+    <failure type="failure">TrafficSignalControllerCondition failed</failure>
+  </testcase>
+  <testcase classname="StoryboardElementStateCondition.ConditionFailure:StoryboardElementStateCondition:&lt;name&gt;" name="StoryboardElementStateCondition failed. &lt;name&gt; displays reference information for the target condition.">
+    <failure type="failure">StoryboardElementStateCondition failed. &lt;name&gt; displays reference information for the target condition.</failure>
+  </testcase>
+  <testcase classname="UserDefinedValueCondition.ConditionFailure:UserDefinedValueCondition:&lt;name&gt;" name="UserDefinedValueCondition failed.&lt;name&gt; displays reference information for the target condition.">
+    <failure type="failure">UserDefinedValueCondition failed.&lt;name&gt; displays reference information for the target condition.</failure>
+  </testcase>
+</testsuite>
