@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     parameters {
-        choice(name: 'CATALOG', choices: ['Vehicle1', 'Vehicle2'], description: 'Select the vehicle catalog to be evaluated')
+        choice(name: 'CATALOG', choices: ['BMW M8', 'Vehicle2'], description: 'Select the vehicle catalog to be evaluated')
         string(name: 'SUITE', defaultValue: 'All', description: 'Test suite to run')
-        choice(name: 'SCM_TYPE', choices: ['Git', 'Web.Auto', 'Reuse build artifacts'], description: 'Select the management method of the source code')
+        choice(name: 'SCM_TYPE', choices: ['Git', 'Reuse build artifacts'], description: 'Select the management method of the source code')
         string(name: 'GIT_BRANCH_TAG_COMMIT', defaultValue: '', description: 'Git branch, tag, or commit ID (if SCM Type is Git)')
         string(name: 'SOURCE_ID', defaultValue: '', description: 'SourceID for Web.Auto (if SCM Type is Web.Auto)')
         string(name: 'JOB_ID', defaultValue: '', description: 'Job ID for reusing build artifacts (if SCM Type is Reuse build artifacts)')
@@ -66,6 +66,15 @@ pipeline {
                 }
             }
         }
+        stage('Publish Robot Results') {
+            steps {
+                publishRobotFramework robotResults: '**/results/robot/output.xml', 
+                                      robotReports: '**/results/robot/report.html',
+                                      robotLogs: '**/results/robot/log.html',
+                                      passThreshold: 100.0,
+                                      unstableThreshold: 95.0
+            }
+        }
 
         stage('Release') {
             when {
@@ -82,6 +91,7 @@ pipeline {
                 }
             }
         }
+        
     }
 
     post {
