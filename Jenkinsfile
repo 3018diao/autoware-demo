@@ -3,7 +3,7 @@ pipeline {
 
     parameters {
         choice(name: 'CATALOG', choices: ['BMW M8', 'Vehicle2'], description: 'Select the vehicle catalog to be evaluated')
-        choices(name: 'TEST_SUITE_TYPE', choices: ['planning_sim', 'planning_sim_v2', 'log_sim', 'localization', 'ndt_convergence'], description: 'Select a scenario type for the test suite.')        
+        choice(name: 'TEST_SUITE_TYPE', choices: ['planning_sim', 'planning_sim_v2', 'log_sim', 'localization', 'ndt_convergence'], description: 'Select a scenario type for the test suite.')        
         choice(name: 'SCM_TYPE', choices: ['Git', 'Reuse build artifacts'], description: 'Select the management method of the source code')
         string(name: 'GIT_SSH', defaultValue: '', description: 'Git SSH address')
         string(name: 'GIT_BRANCH_TAG_COMMIT', defaultValue: '', description: 'Git branch, tag, or commit ID (if SCM Type is Git)')
