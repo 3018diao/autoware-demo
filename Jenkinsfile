@@ -3,7 +3,7 @@ pipeline {
 
     parameters {
         choice(name: 'CATALOG', choices: ['BMW M8', 'Vehicle2'], description: 'Select the vehicle catalog to be evaluated')
-        string(name: 'SUITE', defaultValue: 'All', description: 'Test suite to run')
+        choice(name: 'TEST_SUITE_TYPE', choices: ['planning_sim', 'planning_sim_v2', 'log_sim', 'localization', 'ndt_convergence'], description: 'Select a scenario type for the test suite.')        
         choice(name: 'SCM_TYPE', choices: ['Git', 'Reuse build artifacts'], description: 'Select the management method of the source code')
         string(name: 'GIT_BRANCH_TAG_COMMIT', defaultValue: '', description: 'Git branch, tag, or commit ID (if SCM Type is Git)')
         string(name: 'SOURCE_ID', defaultValue: '', description: 'SourceID for Web.Auto (if SCM Type is Web.Auto)')
@@ -12,9 +12,11 @@ pipeline {
         booleanParam(name: 'PARTIAL_RELEASE', defaultValue: false, description: 'Enable partial release')
         booleanParam(name: 'CLEAN_BUILD', defaultValue: false, description: 'Enable clean build')
         booleanParam(name: 'DEBUG_BUILD', defaultValue: false, description: 'Enable debug build')
-        booleanParam(name: 'SKIP_TEST', defaultValue: false, description: 'Skip the test')
+        booleanParam(name: 'SKIP_SIM_TEST', defaultValue: false, description: 'Skip the sim_test')
+        booleanParam(name: 'SKIP_REAL_TEST', defaultValue: false, description: 'Skip the real_test')
         string(name: 'MAX_TEST_RETRIES', defaultValue: '0', description: 'Number of times to retry on test failure')
         string(name: 'DESCRIPTION', defaultValue: '', description: 'Description for the test')
+        
     }
 
     stages {
@@ -52,10 +54,10 @@ pipeline {
             }
         }
 
-        stage('Test') {
+        stage('Virtual Test') {
             when {
                 not {
-                    expression { params.SKIP_TEST }
+                    expression { params.SKIP_SIM_TEST }
                 }
             }
             steps {
@@ -63,15 +65,25 @@ pipeline {
                     // Add commands to run tests here
                     // Use params.SUITE to select the test suite
                     echo "Running test suite ${params.SUITE}..."
+
+                    robot archiveDirName: 'robot-plugin', outputPath: 'results/robot/', overwriteXAxisLabel: '', passThreshold: 95.0, unstableThreshold: 100.0
                 }
             }
         }
-        stage('Publish Robot Results') {
+
+
+        stage('Real car deployment and test') {
+            when {
+                not {
+                    expression { params.SKIP_REAL_TEST }
+                }
+            }
             steps {
-                robot archiveDirName: 'robot-plugin', outputPath: 'results/robot/', overwriteXAxisLabel: '', passThreshold: 95.0, unstableThreshold: 100.0
+                echo "Real car deployment"
             }
         }
 
+        
         stage('Release') {
             when {
                 expression { params.RELEASE }
