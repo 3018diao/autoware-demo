@@ -14,7 +14,8 @@ pipeline {
             value: 'planning_sim,planning_sim_v2,log_sim,localization,ndt_convergence',
             defaultValue: 'planning_sim,planning_sim_v2,log_sim,localization,ndt_convergence',
             choices: 'planning_sim\nplanning_sim_v2\nlog_sim\nlocalization\nndt_convergence'
-        )        choice(name: 'SCM_TYPE', choices: ['Git', 'Reuse build artifacts'], description: 'Select the management method of the source code')
+        )        
+        choice(name: 'SCM_TYPE', choices: ['Git', 'Reuse build artifacts'], description: 'Select the management method of the source code')
         string(name: 'GIT_SSH', defaultValue: '', description: 'Git SSH address')
         string(name: 'GIT_BRANCH_TAG_COMMIT', defaultValue: '', description: 'Git branch, tag, or commit ID (if SCM Type is Git)')
         string(name: 'JOB_ID', defaultValue: '', description: 'Job ID for reusing build artifacts (if SCM Type is Reuse build artifacts)')
