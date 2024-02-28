@@ -1,173 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulation Report</title>
+    <title>Enhanced Autonomous Driving Simulation Test Report</title>
     <style>
-        body { font-family: Arial, sans-serif; }
-        table { width: 100%; border-collapse: collapse; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        th { background-color: #f2f2f2; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2,
+        .pass-rate {
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+
+        .pass {
+            background-color: #c3e6cb;
+        }
+
+        .fail {
+            background-color: #f5c6cb;
+        }
+
+        .result-header,
+        .conclusion {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .conclusion {
+            padding: 10px;
+            background-color: #e2e3e5;
+            border-left: 5px solid #007bff;
+            font-style: italic;
+        }
     </style>
 </head>
+
 <body>
-    <h2>Simulation Report</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Category</th>
-                <th>Sub Category</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            
-            <tr>
-                <td>HealthCheck</td>
-                <td>-</td>
-                <td>Simulator health check fails</td>
-            </tr>
-            
-            <tr>
-                <td>ROSProcessCheck</td>
-                <td>-</td>
-                <td>Executed ROS process terminated abnormally</td>
-            </tr>
-            
-            <tr>
-                <td>SimulationFailure</td>
-                <td>-</td>
-                <td>Simulation results fail</td>
-            </tr>
-            
-            <tr>
-                <td>SimulationError1</td>
-                <td>AutowareError</td>
-                <td>Error in message exchange between simulator and Autoware</td>
-            </tr>
-            
-            <tr>
-                <td>InternalError</td>
-                <td>SimulationError:InternalError</td>
-                <td>Unexpected simulator error</td>
-            </tr>
-            
-            <tr>
-                <td>SemanticError</td>
-                <td>SimulationError:SemanticError</td>
-                <td>Semantic anomaly in a scenario</td>
-            </tr>
-            
-            <tr>
-                <td>SimulationError</td>
-                <td>SimulationError:SimulationError</td>
-                <td>Errors inside the simulator</td>
-            </tr>
-            
-            <tr>
-                <td>SyntaxError</td>
-                <td>SimulationError:SyntaxError</td>
-                <td>Syntax errors in scenarios</td>
-            </tr>
-            
-            <tr>
-                <td>SpecificationViolation</td>
-                <td>SimulationError:SpecificationViolation</td>
-                <td>Specification violations during simulation execution</td>
-            </tr>
-            
-            <tr>
-                <td>EntityConditionFailure</td>
-                <td>ReachPositionCondition</td>
-                <td>ReachPositionCondition failed</td>
-            </tr>
-            
-            <tr>
-                <td>RelativeDistanceCondition</td>
-                <td>ConditionFailure:RelativeDistanceCondition</td>
-                <td>RelativeDistanceCondition failed</td>
-            </tr>
-            
-            <tr>
-                <td>SpeedCondition</td>
-                <td>ConditionFailure:SpeedCondition</td>
-                <td>SpeedCondition failed</td>
-            </tr>
-            
-            <tr>
-                <td>AccelerationCondition</td>
-                <td>ConditionFailure:AccelerationCondition</td>
-                <td>AccelerationCondition failed</td>
-            </tr>
-            
-            <tr>
-                <td>CollisionCondition</td>
-                <td>ConditionFailure:CollisionCondition</td>
-                <td>CollisionCondition failed</td>
-            </tr>
-            
-            <tr>
-                <td>EndOfRoadCondition</td>
-                <td>ConditionFailure:EndOfRoadCondition</td>
-                <td>EndOfRoadCondition failed</td>
-            </tr>
-            
-            <tr>
-                <td>OffroadCondition</td>
-                <td>ConditionFailure:OffroadCondition</td>
-                <td>OffroadCondition failed</td>
-            </tr>
-            
-            <tr>
-                <td>TimeHeadwayCondition</td>
-                <td>ConditionFailure:TimeHeadwayCondition</td>
-                <td>TimeHeadwayCondition failed</td>
-            </tr>
-            
-            <tr>
-                <td>StandStillCondition</td>
-                <td>ConditionFailure:StandStillCondition</td>
-                <td>StandStillCondition failed</td>
-            </tr>
-            
-            <tr>
-                <td>DistanceCondition</td>
-                <td>ConditionFailure:DistanceCondition</td>
-                <td>DistanceCondition failed</td>
-            </tr>
-            
-            <tr>
-                <td>ByValueConditionFailure</td>
-                <td>SimulationTimeCondition</td>
-                <td>SimulationTimeCondition failed</td>
-            </tr>
-            
-            <tr>
-                <td>TrafficSignalCondition</td>
-                <td>ConditionFailure:TrafficSignalCondition</td>
-                <td>TrafficSignalCondition failed</td>
-            </tr>
-            
-            <tr>
-                <td>TrafficSignalControllerCondition</td>
-                <td>ConditionFailure:TrafficSignalControllerCondition</td>
-                <td>TrafficSignalControllerCondition failed</td>
-            </tr>
-            
-            <tr>
-                <td>StoryboardElementStateCondition</td>
-                <td>ConditionFailure:StoryboardElementStateCondition:<name></td>
-                <td>StoryboardElementStateCondition failed. <name> displays reference information for the target condition.</td>
-            </tr>
-            
-            <tr>
-                <td>UserDefinedValueCondition</td>
-                <td>ConditionFailure:UserDefinedValueCondition:<name></td>
-                <td>UserDefinedValueCondition failed.<name> displays reference information for the target condition.</td>
-            </tr>
-            
-        </tbody>
-    </table>
+    <div class="container">
+        <h2>Autonomous Driving Simulation Test Report</h2>
+        <p><strong>Test Date:</strong> February 28, 2024</p>
+        <p><strong>Test Environment:</strong> Autonomous Driving Simulator v2.4</p>
+        <p><strong>Test Objective:</strong> Comprehensive Testing of Autonomous Driving Software</p>
+        <p class="pass-rate"><strong>Pass Rate:</strong> 30% (3 Passed / 10 Total)</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Scenario No.</th>
+                    <th>Test Scenario</th>
+                    <th>Test Condition</th>
+                    <th>Result</th>
+                    <th>Label</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="fail">
+                    <td>1</td>
+                    <td>Urban Traffic - Traffic Lights</td>
+                    <td>Pass through traffic light intersection</td>
+                    <td>Fail</td>
+                    <td>SimulationError:TrafficSignalCondition</td>
+                    <td>Traffic signal condition failed, did not respond correctly to traffic lights</td>
+                </tr>
+                <tr class="pass">
+                    <td>2</td>
+                    <td>Highway Driving - Overtaking</td>
+                    <td>Overtake slower vehicle ahead on the highway</td>
+                    <td>Pass</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr class="fail">
+                    <td>3</td>
+                    <td>Pedestrian Crossing</td>
+                    <td>Stop for pedestrian at crosswalk</td>
+                    <td>Fail</td>
+                    <td>CollisionCondition</td>
+                    <td>Failed to stop for pedestrian, resulting in a collision condition</td>
+                </tr>
+                <tr class="pass">
+                    <td>4</td>
+                    <td>Emergency Braking</td>
+                    <td>Perform emergency braking to avoid collision</td>
+                    <td>Pass</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr class="fail">
+                    <td>5</td>
+                    <td>Rural Road - Animal Crossing</td>
+                    <td>Respond to sudden animal crossing</td>
+                    <td>Fail</td>
+                    <td>SimulationError:InternalError</td>
+                    <td>Unexpected simulator error during animal crossing scenario</td>
+                </tr>
+                <!-- Added scenarios -->
+                <tr class="fail">
+                    <td>6</td>
+                    <td>Sharp Turn Handling</td>
+                    <td>Navigate sharp turns successfully</td>
+                    <td>Fail</td>
+                    <td>SimulationError:OffroadCondition</td>
+                    <td>Vehicle failed to navigate sharp turn, resulting in offroad condition</td>
+                </tr>
+                <tr class="pass">
+                    <td>7</td>
+                    <td>Stop Sign Compliance</td>
+                    <td>Vehicle stops at all stop signs</td>
+                    <td>Pass</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr class="fail">
+                    <td>8</td>
+                    <td>Dynamic Obstacle Avoidance</td>
+                    <td>Avoid sudden obstacles on the road</td>
+                    <td>Fail</td>
+                    <td>CollisionCondition</td>
+                    <td>Failed to avoid a suddenly appearing obstacle, resulting in collision</td>
+                </tr>
+                <tr class="fail">
+                    <td>9</td>
+                    <td>Speed Limit Compliance</td>
+                    <td>Adhere to varying speed limits</td>
+                    <td>Fail</td>
+                    <td>SpeedCondition</td>
+                    <td>Vehicle exceeded speed limits in multiple zones</td>
+                </tr>
+                <tr class="fail">
+                    <td>10</td>
+                    <td>Weather Conditions Handling</td>
+                    <td>Drive safely in adverse weather conditions</td>
+                    <td>Fail</td>
+                    <td>SimulationError:VisibilityCondition</td>
+                    <td>Failed to adjust driving behavior appropriately in low visibility conditions</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="result-header">Test Conclusion:</p>
+
+    </div>
 </body>
+
 </html>
