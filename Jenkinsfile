@@ -3,18 +3,7 @@ pipeline {
 
     parameters {
         choice(name: 'CATALOG', choices: ['BMW M8', 'Vehicle2'], description: 'Select the vehicle catalog to be evaluated')
-        extendedChoice(
-            name: 'TEST_SUITE_TYPE',
-            type: 'PT_CHECKBOX',
-            multiSelectDelimiter: ',',
-            quoteValue: false,
-            saveJSONParameterToFile: false,
-            visibleItemCount: 5,
-            description: 'Select a scenario type for the test suite.',
-            value: 'planning_sim,planning_sim_v2,log_sim,localization,ndt_convergence',
-            defaultValue: 'planning_sim,planning_sim_v2,log_sim,localization,ndt_convergence',
-            choices: 'planning_sim\nplanning_sim_v2\nlog_sim\nlocalization\nndt_convergence'
-        )        
+        choices(name: 'TEST_SUITE_TYPE', choices: ['planning_sim', 'planning_sim_v2', 'log_sim', 'localization', 'ndt_convergence'], description: 'Select a scenario type for the test suite.')        
         choice(name: 'SCM_TYPE', choices: ['Git', 'Reuse build artifacts'], description: 'Select the management method of the source code')
         string(name: 'GIT_SSH', defaultValue: '', description: 'Git SSH address')
         string(name: 'GIT_BRANCH_TAG_COMMIT', defaultValue: '', description: 'Git branch, tag, or commit ID (if SCM Type is Git)')
@@ -75,7 +64,7 @@ pipeline {
                 script {
                     // Add commands to run tests here
                     // Use params.SUITE to select the test suite
-                    echo "Running test suite "
+                    echo "Running test suite ${params.SUITE}..."
 
                     robot archiveDirName: 'robot-plugin', outputPath: 'results/robot/', overwriteXAxisLabel: '', passThreshold: 95.0, unstableThreshold: 100.0
                 }
