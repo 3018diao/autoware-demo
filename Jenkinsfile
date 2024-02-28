@@ -75,7 +75,7 @@ pipeline {
                 script {
                     // Add commands to run tests here
                     // Use params.SUITE to select the test suite
-                    echo "Running test suite ${params.SUITE}..."
+                    echo "Running test suite "
 
                     robot archiveDirName: 'robot-plugin', outputPath: 'results/robot/', overwriteXAxisLabel: '', passThreshold: 95.0, unstableThreshold: 100.0
                 }
