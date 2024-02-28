@@ -93,6 +93,8 @@ pipeline {
                     // Add commands for release here
                     if (params.PARTIAL_RELEASE) {
                         echo "Performing partial release..."
+                        sh 'tar -czvf build.tar.gz *'
+                        archiveArtifacts artifacts: 'build.tar.gz', onlyIfSuccessful: true
                     } else {
                         echo "Performing full release..."
                     }
